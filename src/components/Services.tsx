@@ -88,6 +88,34 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
         { name: "2D Signs", description: "Flat panel and printed signs" },
         { name: "Shop Signs", description: "Storefront and retail signage" }
       ]
+    },
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      title: "Outdoor and Indoor Advertising",
+      description: "Creative advertising solutions for indoor and outdoor spaces",
+      color: "text-purple-400",
+      bgGradient: "from-purple-500/20 to-purple-600/10",
+      items: [
+        { name: "Billboards", description: "Large scale outdoor advertising" },
+        { name: "Light Boxes", description: "Illuminated advertising displays" },
+        { name: "Digital Signage", description: "Dynamic digital advertising solutions" },
+        { name: "Window Graphics", description: "Custom indoor window displays" },
+        { name: "Exhibition Stands", description: "Custom indoor advertising stands" }
+      ]
+    },
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      title: "Electrical Supplies",
+      description: "Electrical products including lighting solutions",
+      color: "text-indigo-400",
+      bgGradient: "from-indigo-500/20 to-indigo-600/10",
+      items: [
+        { name: "LED Lights", description: "Energy-efficient lighting solutions" },
+        { name: "Outdoor Lighting", description: "Durable lighting for outdoor spaces" },
+        { name: "Indoor Lighting", description: "Versatile lighting for indoor use" },
+        { name: "Electrical Cables", description: "High-quality electrical wiring" },
+        { name: "Switches and Sockets", description: "Reliable electrical fittings" }
+      ]
     }
   ];
 
