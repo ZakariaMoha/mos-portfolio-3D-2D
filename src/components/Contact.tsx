@@ -17,8 +17,13 @@ const Contact: React.FC<ContactProps> = ({ isDark }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
+    // Format the form data into a WhatsApp message
+    const message = `Name: ${formData.name}%0AEmail: ${formData.email}%0APhone: ${formData.phone}%0AService: ${formData.service}%0AMessage: ${formData.message}`;
+    // WhatsApp API URL with phone number and message
+    const whatsappUrl = `https://wa.me/254768895536?text=${message}`;
+    // Open WhatsApp URL in a new tab
+    window.open(whatsappUrl, '_blank');
+
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 3000);
     setFormData({ name: '', email: '', phone: '', service: '', message: '' });
