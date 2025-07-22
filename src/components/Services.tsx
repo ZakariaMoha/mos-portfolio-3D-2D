@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shirt, Printer, FileText, MapPin } from 'lucide-react';
+import { Shirt, Printer, FileText, MapPin, Lightbulb } from 'lucide-react';
 
 interface ServicesProps {
   isDark: boolean;
@@ -36,15 +36,15 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
       color: "text-blue-400",
       bgGradient: "from-blue-500/20 to-blue-600/10",
       items: [
-        { name: "T-shirts", description: "Custom printed tees for any occasion" },
-        { name: "Reflectors", description: "High-visibility safety wear" },
-        { name: "Overalls", description: "Professional workwear solutions" },
-        { name: "Caps/Hats", description: "Branded headwear collection" },
-        { name: "Bags", description: "Custom bags and promotional items" },
-        { name: "Hoodies", description: "Comfortable branded hoodies" },
-        { name: "Corporate Shirts", description: "Professional business attire" },
-        { name: "Lanyards", description: "Custom ID and promotional lanyards" },
-        { name: "Jackets/Coats", description: "Branded outerwear solutions" }
+        { name: "T-shirts", description: "Custom printed tees for any occasion", imageUrl: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Reflectors", description: "High-visibility safety wear", imageUrl: "https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Overalls", description: "Professional workwear solutions", imageUrl: "https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Caps/Hats", description: "Branded headwear collection", imageUrl: "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Bags", description: "Custom bags and promotional items", imageUrl: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Hoodies", description: "Comfortable branded hoodies", imageUrl: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Corporate Shirts", description: "Professional business attire", imageUrl: "https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Lanyards", description: "Custom ID and promotional lanyards", imageUrl: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Jackets/Coats", description: "Branded outerwear solutions", imageUrl: "https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&w=400" }
       ]
     },
     {
@@ -54,14 +54,14 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
       color: "text-green-400",
       bgGradient: "from-green-500/20 to-green-600/10",
       items: [
-        { name: "Pop-up Banners", description: "Portable display solutions" },
-        { name: "Roll-up Banners", description: "Professional exhibition displays" },
-        { name: "Teardrop Banners", description: "Eye-catching outdoor flags" },
-        { name: "Wall Stickers", description: "Custom vinyl wall graphics" },
-        { name: "Flags", description: "Custom flags for events and promotion" },
-        { name: "Vehicle Wraps", description: "Mobile advertising solutions" },
-        { name: "Posters", description: "High-quality promotional posters" },
-        { name: "Backdrops", description: "Event and photo backdrops" }
+        { name: "Pop-up Banners", description: "Portable display solutions", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Roll-up Banners", description: "Professional exhibition displays", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Teardrop Banners", description: "Eye-catching outdoor flags", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Wall Stickers", description: "Custom vinyl wall graphics", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Flags", description: "Custom flags for events and promotion", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Vehicle Wraps", description: "Mobile advertising solutions", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Posters", description: "High-quality promotional posters", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Backdrops", description: "Event and photo backdrops", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" }
       ]
     },
     {
@@ -71,16 +71,16 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
       color: "text-yellow-400",
       bgGradient: "from-yellow-500/20 to-yellow-600/10",
       items: [
-        { name: "Business Cards", description: "Professional networking essentials" },
-        { name: "Letterheads", description: "Branded correspondence materials" },
-        { name: "Labels", description: "Custom product and shipping labels" },
-        { name: "Brochures", description: "Marketing and informational brochures" },
-        { name: "Books", description: "Custom book printing services" },
-        { name: "Packaging", description: "Custom packaging solutions" },
-        { name: "Gift Bags", description: "Branded gift and shopping bags" },
-        { name: "Wedding Cards", description: "Elegant wedding invitations" },
-        { name: "Funeral Programs", description: "Memorial service programs" },
-        { name: "Calendars", description: "Custom promotional calendars" }
+        { name: "Business Cards", description: "Professional networking essentials", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Letterheads", description: "Branded correspondence materials", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Labels", description: "Custom product and shipping labels", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Brochures", description: "Marketing and informational brochures", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Books", description: "Custom book printing services", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Packaging", description: "Custom packaging solutions", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Gift Bags", description: "Branded gift and shopping bags", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Wedding Cards", description: "Elegant wedding invitations", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Funeral Programs", description: "Memorial service programs", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Calendars", description: "Custom promotional calendars", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" }
       ]
     },
     {
@@ -90,11 +90,11 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
       color: "text-red-400",
       bgGradient: "from-red-500/20 to-red-600/10",
       items: [
-        { name: "Wall Branding", description: "Interior and exterior wall graphics" },
-        { name: "Road Signs", description: "Traffic and directional signage" },
-        { name: "3D Signs", description: "Dimensional signage solutions" },
-        { name: "2D Signs", description: "Flat panel and printed signs" },
-        { name: "Shop Signs", description: "Storefront and retail signage" }
+        { name: "Wall Branding", description: "Interior and exterior wall graphics", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Road Signs", description: "Traffic and directional signage", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "3D Signs", description: "Dimensional signage solutions", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "2D Signs", description: "Flat panel and printed signs", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Shop Signs", description: "Storefront and retail signage", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" }
       ]
     },
     {
@@ -104,27 +104,13 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
       color: "text-purple-400",
       bgGradient: "from-purple-500/20 to-purple-600/10",
       items: [
-        { name: "Billboards", description: "Large scale outdoor advertising" },
-        { name: "Light Boxes", description: "Illuminated advertising displays" },
-        { name: "Digital Signage", description: "Dynamic digital advertising solutions" },
-        { name: "Window Graphics", description: "Custom indoor window displays" },
-        { name: "Exhibition Stands", description: "Custom indoor advertising stands" }
+        { name: "Billboards", description: "Large scale outdoor advertising", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Light Boxes", description: "Illuminated advertising displays", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Digital Signage", description: "Dynamic digital advertising solutions", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Window Graphics", description: "Custom indoor window displays", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" },
+        { name: "Exhibition Stands", description: "Custom indoor advertising stands", imageUrl: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" }
       ]
     },
-    {
-      icon: <MapPin className="w-8 h-8" />,
-      title: "Electrical Supplies",
-      description: "Electrical products including lighting solutions",
-      color: "text-indigo-400",
-      bgGradient: "from-indigo-500/20 to-indigo-600/10",
-      items: [
-        { name: "LED Lights", description: "Energy-efficient lighting solutions" },
-        { name: "Outdoor Lighting", description: "Durable lighting for outdoor spaces" },
-        { name: "Indoor Lighting", description: "Versatile lighting for indoor use" },
-        { name: "Electrical Cables", description: "High-quality electrical wiring" },
-        { name: "Switches and Sockets", description: "Reliable electrical fittings" }
-      ]
-    }
   ];
 
   return (
@@ -182,7 +168,7 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
                 </div>
 
                 {/* Service Items Grid */}
-                <div className={`grid gap-4 ${service.title === 'Electrical and Lighting Supplies' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {service.items.map((item, itemIndex) => (
                     <div
                       key={item.name}
