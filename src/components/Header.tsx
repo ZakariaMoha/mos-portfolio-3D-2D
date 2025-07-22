@@ -19,10 +19,11 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'Services', 'About', 'Contact'];
+  const navItems = ['Home', 'Services', 'Lighting', 'About', 'Contact'];
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.toLowerCase());
+    const targetId = sectionId.toLowerCase() === 'lighting' ? 'lighting-products' : sectionId.toLowerCase();
+    const element = document.getElementById(targetId);
     element?.scrollIntoView({ behavior: 'smooth' });
     setIsMenuOpen(false);
   };
