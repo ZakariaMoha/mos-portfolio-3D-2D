@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import LightingProducts from './components/LightingProducts';
 
 function App() {
   const [isDark, setIsDark] = useState(false);
@@ -48,6 +49,7 @@ function App() {
       <main>
         <Hero isDark={isDark} />
         <Services isDark={isDark} />
+        <LightingProducts isDark={isDark} />
         <About isDark={isDark} />
         <Contact isDark={isDark} />
       </main>
