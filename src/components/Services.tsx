@@ -20,6 +20,14 @@ interface ServiceCategory {
 }
 
 const Services: React.FC<ServicesProps> = ({ isDark }) => {
+  const handleWhatsAppOrder = (productName: string, productPrice?: string) => {
+    const phoneNumber = '254768895536'; // Kenya country code + number without leading 0
+    const priceText = productPrice ? ` - ${productPrice}` : '';
+    const message = encodeURIComponent(`Hello! I'm interested in ordering: ${productName}${priceText}. Can you provide more details and help me place an order?`);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const services: ServiceCategory[] = [
     {
       icon: <Shirt className="w-8 h-8" />,
@@ -174,22 +182,47 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
                 </div>
 
                 {/* Service Items Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className={`grid gap-4 ${service.title === 'Electrical and Lighting Supplies' ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
                   {service.items.map((item, itemIndex) => (
                     <div
                       key={item.name}
-                      className={`p-4 rounded-xl transition-all duration-300 hover:scale-105 ${
+                      className={`p-4 rounded-xl transition-all duration-300 hover:scale-102 ${
                         isDark
                           ? 'bg-gray-700/50 hover:bg-gray-700'
                           : 'bg-gray-100/50 hover:bg-gray-100'
                       }`}
                     >
-                      <h4 className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                        {item.name}
-                      </h4>
-                      <p className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                        {item.description}
-                      </p>
+                      <div className="flex items-start space-x-3">
+                        {item.imageUrl && (
+                          <img 
+                            src={item.imageUrl} 
+                            alt={item.name}
+                            className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
+                          />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <h4 className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                            {item.name}
+                          </h4>
+                          <p className={`text-xs mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                            {item.description}
+                          </p>
+                          {item.price && (
+                            <p className="text-sm font-semibold text-green-500 mb-2">
+                              {item.price}
+                            </p>
+                          )}
+                          {item.price && (
+                            <button
+                              onClick={() => handleWhatsAppOrder(item.name, item.price)}
+                              className="flex items-center space-x-1 text-xs bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full transition-colors duration-300"
+                            >
+                              <MessageCircle className="w-3 h-3" />
+                              <span>Order on WhatsApp</span>
+                            </button>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
