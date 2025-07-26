@@ -46,15 +46,19 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item}
-                onClick={() => scrollToSection(item)}
+                href={`#${item.toLowerCase() === 'lighting' ? 'lighting-products' : item.toLowerCase()}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item);
+                }}
                 className={`font-medium transition-colors hover:text-yellow-500 ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}
               >
                 {item}
-              </button>
+              </a>
             ))}
           </nav>
 
@@ -64,6 +68,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
               href="https://facebook.com/Matonda"
               target="_blank"
               rel="noopener noreferrer"
+             aria-label="Visit our Facebook page"
               className={`p-2 rounded-full transition-all hover:scale-110 hover:bg-blue-600 hover:text-white ${
                 isDark ? 'text-white hover:bg-blue-600' : 'text-gray-700 hover:bg-blue-600'
               }`}
@@ -74,6 +79,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
               href="https://instagram.com/Matonda.branding01"
               target="_blank"
               rel="noopener noreferrer"
+             aria-label="Visit our Instagram page"
               className={`p-2 rounded-full transition-all hover:scale-110 hover:bg-pink-600 hover:text-white ${
                 isDark ? 'text-white' : 'text-gray-700'
               }`}
@@ -84,6 +90,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
               href="https://tiktok.com/@matondabranding"
               target="_blank"
               rel="noopener noreferrer"
+             aria-label="Visit our TikTok page"
               className={`p-2 rounded-full transition-all hover:scale-110 hover:bg-black hover:text-white ${
                 isDark ? 'text-white' : 'text-gray-700'
               }`}
@@ -92,6 +99,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
             </a>
             <button
               onClick={toggleTheme}
+             aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
               className={`p-2 rounded-full transition-all hover:scale-110 ${
                 isDark ? 'text-white hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-200'
               }`}
@@ -110,6 +118,9 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
               className={`p-2 ${isDark ? 'text-white' : 'text-gray-700'}`}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -120,21 +131,26 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div
+            id="mobile-menu"
             className={`md:hidden mt-4 py-4 rounded-lg transition-all duration-300 ${
               isDark ? 'bg-gray-800' : 'bg-white'
             } shadow-lg`}
           >
-            <nav className="flex flex-col space-y-4 px-4">
+            <nav className="flex flex-col space-y-4 px-4" role="navigation" aria-label="Mobile navigation">
               {navItems.map((item) => (
-                <button
+                <a
                   key={item}
-                  onClick={() => scrollToSection(item)}
+                  href={`#${item.toLowerCase() === 'lighting' ? 'lighting-products' : item.toLowerCase()}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item);
+                  }}
                   className={`text-left font-medium transition-colors hover:text-yellow-500 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}
                 >
                   {item}
-                </button>
+                </a>
               ))}
             </nav>
             <div className="flex items-center justify-center space-x-6 mt-6">
@@ -142,6 +158,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
                 href="https://facebook.com/Matonda"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit our Facebook page"
                 className={`p-2 rounded-full transition-all hover:scale-110 hover:bg-blue-600 hover:text-white ${
                   isDark ? 'text-white' : 'text-gray-700'
                 }`}
@@ -152,6 +169,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
                 href="https://instagram.com/Matonda.branding01"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit our Instagram page"
                 className={`p-2 rounded-full transition-all hover:scale-110 hover:bg-pink-600 hover:text-white ${
                   isDark ? 'text-white' : 'text-gray-700'
                 }`}
@@ -162,6 +180,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
                 href="https://tiktok.com/@matondabranding"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit our TikTok page"
                 className={`p-2 rounded-full transition-all hover:scale-110 hover:bg-black hover:text-white ${
                   isDark ? 'text-white' : 'text-gray-700'
                 }`}

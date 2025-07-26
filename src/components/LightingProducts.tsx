@@ -23,7 +23,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 1,
       name: "Decor Wall Light",
       price: "KSh 1,500",
-      image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/decor-wall-light.jpg",
       category: "Decor",
       description: "Modern LED wall light perfect for home decoration",
       rating: 4.5
@@ -32,7 +32,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 2,
       name: "Security Flood Light",
       price: "KSh 2,800",
-      image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/security-flood-light.jpg",
       category: "Security",
       description: "Motion sensor security light with LED technology",
       rating: 4.8
@@ -41,7 +41,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 3,
       name: "Crystal Chandelier",
       price: "KSh 15,000",
-      image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/crystal-chandelier.jpg",
       category: "Chandeliers",
       description: "Elegant crystal chandelier for dining rooms",
       rating: 4.9
@@ -50,7 +50,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 4,
       name: "LED Strip Lights",
       price: "KSh 800",
-      image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/led-strip-lights.jpg",
       category: "Decor",
       description: "RGB LED strip lights for ambient lighting",
       rating: 4.3
@@ -59,7 +59,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 5,
       name: "Solar Security Light",
       price: "KSh 3,500",
-      image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/solar-security-light.jpg",
       category: "Security",
       description: "Solar powered security light with motion detection",
       rating: 4.6
@@ -68,7 +68,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 6,
       name: "Modern Chandelier",
       price: "KSh 12,000",
-      image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/modern-chandelier.jpg",
       category: "Chandeliers",
       description: "Contemporary chandelier with adjustable brightness",
       rating: 4.7
@@ -77,7 +77,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 7,
       name: "Pendant Decor Light",
       price: "KSh 2,200",
-      image: "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/pendant-decor-light.jpg",
       category: "Decor",
       description: "Stylish pendant light for kitchen and dining areas",
       rating: 4.4
@@ -86,7 +86,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 8,
       name: "PIR Security Light",
       price: "KSh 1,800",
-      image: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "/images/lighting/pir-security-light.jpg",
       category: "Security",
       description: "PIR motion sensor light for outdoor security",
       rating: 4.2
