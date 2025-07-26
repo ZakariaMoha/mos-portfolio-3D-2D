@@ -198,7 +198,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProducts.map((product) => (
-            <div
+<div
               key={product.id}
               className={`group relative rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                 isDark ? 'bg-gray-700' : 'bg-white'
@@ -210,7 +210,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
                   src={product.image}
                   alt={product.name}
                   loading="lazy"
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-40 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 
                 {/* Category Badge */}

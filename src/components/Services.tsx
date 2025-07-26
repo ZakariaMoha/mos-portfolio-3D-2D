@@ -180,16 +180,16 @@ const Services: React.FC<ServicesProps> = ({ isDark }) => {
                           : 'bg-gray-100/50 hover:bg-gray-100'
                       }`}
                     >
-<div className="flex items-start space-x-3 flex-wrap">
+<div className="flex flex-col sm:flex-row items-start space-x-0 sm:space-x-3 flex-wrap">
                         {item.imageUrl && (
 <img 
   src={item.imageUrl} 
   alt={item.name}
   loading="lazy"
-  className="w-48 h-48 rounded-lg object-cover flex-shrink-0 transition-transform duration-300 ease-in-out hover:scale-110"
+  className="w-full max-w-xs h-auto sm:w-48 sm:h-48 rounded-lg object-cover flex-shrink-0 transition-transform duration-300 ease-in-out hover:scale-110"
 />
                         )}
-                        <div className="flex-1 min-w-0">
+                        <div className="flex-1 min-w-0 mt-3 sm:mt-0 sm:ml-4">
                           <h4 className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                             {item.name}
                           </h4>
