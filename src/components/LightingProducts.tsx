@@ -17,13 +17,14 @@ interface Product {
 
 const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [location, setLocation] = useState('Nairobi');
 
   const products: Product[] = [
     {
       id: 1,
       name: "Decor Wall Light",
       price: "KSh 1,500",
-      image: "/images/lighting/decor-wall-light.jpg",
+      image: "/images/l7.jpeg",
       category: "Decor",
       description: "Modern LED wall light perfect for home decoration",
       rating: 4.5
@@ -32,7 +33,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 2,
       name: "Security Flood Light",
       price: "KSh 2,800",
-      image: "/images/lighting/security-flood-light.jpg",
+      image: "/images/l3.jpeg",
       category: "Security",
       description: "Motion sensor security light with LED technology",
       rating: 4.8
@@ -41,7 +42,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 3,
       name: "Crystal Chandelier",
       price: "KSh 15,000",
-      image: "/images/lighting/crystal-chandelier.jpg",
+      image: "/images/l5.jpeg",
       category: "Chandeliers",
       description: "Elegant crystal chandelier for dining rooms",
       rating: 4.9
@@ -50,17 +51,17 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 4,
       name: "LED Strip Lights",
       price: "KSh 800",
-      image: "/images/lighting/led-strip-lights.jpg",
+      image: "/images/l4.jpeg",
       category: "Decor",
       description: "RGB LED strip lights for ambient lighting",
       rating: 4.3
     },
     {
       id: 5,
-      name: "Solar Security Light",
+      name: " Light",
       price: "KSh 3,500",
-      image: "/images/lighting/solar-security-light.jpg",
-      category: "Security",
+      image: "/images/l3.jpeg",
+      category: "Decor",
       description: "Solar powered security light with motion detection",
       rating: 4.6
     },
@@ -68,7 +69,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 6,
       name: "Modern Chandelier",
       price: "KSh 12,000",
-      image: "/images/lighting/modern-chandelier.jpg",
+      image: "/images/l1.jpeg",
       category: "Chandeliers",
       description: "Contemporary chandelier with adjustable brightness",
       rating: 4.7
@@ -77,7 +78,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 7,
       name: "Pendant Decor Light",
       price: "KSh 2,200",
-      image: "/images/lighting/pendant-decor-light.jpg",
+      image: "/images/l2.jpeg",
       category: "Decor",
       description: "Stylish pendant light for kitchen and dining areas",
       rating: 4.4
@@ -86,7 +87,7 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
       id: 8,
       name: "PIR Security Light",
       price: "KSh 1,800",
-      image: "/images/lighting/pir-security-light.jpg",
+      image: "/images/l8.jpeg",
       category: "Security",
       description: "PIR motion sensor light for outdoor security",
       rating: 4.2
@@ -99,9 +100,17 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
     ? products 
     : products.filter(product => product.category === selectedCategory);
 
-  const handleWhatsAppOrder = (productName: string, productPrice: string) => {
+  const handleWhatsAppOrder = (productName: string, location: string) => {
     const phoneNumber = '254768895536';
-    const message = encodeURIComponent(`Hello, I'm interested in ordering: ${productName} - ${productPrice}. Can you provide more details?`);
+    let messageText = `Hello, I'm interested in ordering: ${productName}.`;
+
+    if (location === 'Nairobi') {
+      messageText += " Delivery within Nairobi.";
+    } else {
+      messageText += " Delivery will be self-paid.";
+    }
+
+    const message = encodeURIComponent(messageText);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -168,6 +177,22 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
               </button>
             ))}
           </div>
+
+          {/* Location Selector */}
+          <div className="mt-6 flex justify-center">
+            <label htmlFor="location" className={`mr-4 font-medium ${isDark ? 'text-white' : 'text-gray-900'}`}>
+              Select Location:
+            </label>
+            <select
+              id="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              className={`border rounded px-3 py-2 ${isDark ? 'bg-gray-700 text-white border-gray-600' : 'bg-white text-gray-900 border-gray-300'}`}
+            >
+              <option value="Nairobi">Nairobi</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
         </div>
 
         {/* Products Grid */}
@@ -202,12 +227,6 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
 
               {/* Product Details */}
               <div className="p-6">
-                <h3 className={`text-lg font-bold mb-2 ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}>
-                  {product.name}
-                </h3>
-                
                 <p className={`text-sm mb-3 ${
                   isDark ? 'text-gray-300' : 'text-gray-600'
                 }`}>
@@ -224,16 +243,14 @@ const LightingProducts: React.FC<LightingProductsProps> = ({ isDark }) => {
                   </span>
                 </div>
 
-                {/* Price */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-2xl font-bold text-green-500">
-                    {product.price}
-                  </span>
+                {/* Delivery */}
+                <div className="mb-4 text-sm font-medium text-blue-600">
+                  {location === 'Nairobi' ? 'Delivery within Nairobi' : 'Delivery: Self-paid delivery costs'}
                 </div>
 
                 {/* WhatsApp Order Button */}
                 <button
-                  onClick={() => handleWhatsAppOrder(product.name, product.price)}
+                  onClick={() => handleWhatsAppOrder(product.name, location)}
                   className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-5 h-5" />
